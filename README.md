@@ -1,10 +1,18 @@
-It's an opionated [fiber](https://gofiber.io/) request logger middleware using [slog](https://pkg.go.dev/golang.org/x/exp/slog) library.
+## Archived
 
-It allows adding attribute from anywhere within the handler.
+This project is archived in favor of the official Fiber slog middleware:
 
-**Usage**
+- [`github.com/gofiber/contrib/fiberslog`](https://github.com/gofiber/contrib/tree/main/fiberslog)
 
-registering middleware with custom config
+This package remains here for existing users, but new projects should prefer the official package above.
+
+It is an opinionated [Fiber](https://gofiber.io/) request logger middleware using [slog](https://pkg.go.dev/log/slog).
+
+It allows adding attributes from anywhere within the handler.
+
+## Usage
+
+Registering middleware with custom config:
 
 ```go
 app.Use(logger.New(logger.Config{
@@ -25,7 +33,7 @@ app.Use(logger.New(logger.Config{
 }))
 ```
 
-Adding extra attribute from anywhere within handler
+Adding extra attributes from anywhere within a handler:
 
 ```go
 router.Post("/", func(ctx *fiber.Ctx) error {
